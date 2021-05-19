@@ -7,15 +7,9 @@ import (
     "strings"
     "encoding/json"
     "time"
-    "os"
 )
 
 var (
-    // Environment variables, will need to migrate logic to outside of package
-    connect_sid = os.Getenv("TEXTRN_CONNECT_SID")
-    username = os.Getenv("TEXTRN_USERNAME")
-    phone = os.Getenv("TEXTRN_PHONE")
-
     // Base URL for TextNow service
     base_url = "https://www.textnow.com/api/users/"
 
@@ -28,7 +22,8 @@ type Client struct {
     Username    string
 }
 
-
+/*
+    This method does not seem to be needed
 func GetMessages() {
     // Create client and request objects
     req, err := http.NewRequest("GET", base_url + username + "/messages", nil)
@@ -49,6 +44,7 @@ func GetMessages() {
     // Print response
     fmt.Println(string(data))
 }
+*/
 
 type SendMessageBody struct {
     PhoneNumber         string  `json:"contact_value"`
@@ -93,7 +89,7 @@ func (c Client) SendMessage(number, message string) string {
     }
 
     // Create HTTP POST request object
-    req, err := http.NewRequest("POST", base_url + username + "/messages", strings.NewReader(string(bytes)))
+    req, err := http.NewRequest("POST", base_url + c.Username + "/messages", strings.NewReader(string(bytes)))
     if err != nil {
         fmt.Println("err")
         return "err"
