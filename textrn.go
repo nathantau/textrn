@@ -8,15 +8,16 @@ import (
     "encoding/json"
     "time"
     "os"
-    "flag"
 )
 
 var (
+    // Environment variables, will need to migrate logic to outside of package
     connect_sid = os.Getenv("TEXTRN_CONNECT_SID")
-    base_url = "https://www.textnow.com/api/users/"
     username = os.Getenv("TEXTRN_USERNAME")
     phone = os.Getenv("TEXTRN_PHONE")
-    client = &http.Client{} // Client used for caching TCP connections
+    base_url = "https://www.textnow.com/api/users/"
+    // Client used for caching TCP connections
+    client = &http.Client{}
 )
 
 func GetMessages() {
