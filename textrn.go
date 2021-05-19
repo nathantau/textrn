@@ -22,30 +22,6 @@ type Client struct {
     Username    string
 }
 
-/*
-    This method does not seem to be needed
-func GetMessages() {
-    // Create client and request objects
-    req, err := http.NewRequest("GET", base_url + username + "/messages", nil)
-    if err != nil {
-        fmt.Println("error")
-        return
-    }
-    // Add cookie with identifier
-    req.Header.Set("Cookie", "connect.sid=" + connect_sid)
-
-    res, err := client.Do(req)
-    defer res.Body.Close()
-    data, err := ioutil.ReadAll(res.Body)
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-    // Print response
-    fmt.Println(string(data))
-}
-*/
-
 type SendMessageBody struct {
     PhoneNumber         string  `json:"contact_value"`
     ContactType         int     `json:"contact_type"`
@@ -57,10 +33,6 @@ type SendMessageBody struct {
     HasVideo            bool    `json:"has_video"`
     New                 bool    `json:"new"`
     Date                string  `json:"date"`
-}
-
-type MessageId struct {
-    Id  string  `json:"id"`
 }
 
 /*
