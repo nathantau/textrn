@@ -8,7 +8,7 @@ Currently the only supported feature is sending an SMS message to a specified nu
 
 ## Usage
 
-Note that as mentioned above, a TextNow account must first be created. Upon doing so, determine your `connect_sid` value by navigating to [here](https://www.textnow.com/messaging TextNow), inspecting the webpage and finding the value of the cookie `connect.sid`. 
+Note that as mentioned above, a TextNow account must first be created. Upon doing so, determine your `connect_sid` value by navigating to [here]("https://www.textnow.com/messaging" TextNow), inspecting the webpage and finding the value of the cookie `connect.sid`. 
 
 Also remember the username that was registered with TextNow, as that will be the value of `username`.
 
