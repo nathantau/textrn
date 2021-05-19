@@ -1,4 +1,4 @@
-package main
+package textrn
 
 import (
     "fmt"
@@ -79,8 +79,6 @@ func SendMessage(number, message string) {
     req.Header.Set("Cookie", "connect.sid=" + connect_sid)
     req.Header.Set("Content-Type", "application/json")
     req.Header.Set("Host", "www.textnow.com")
-    //req.Header.Set("Accept", "*/*")
-    //req.Header.Set("Accept-Encoding", "gzip, deflate, br")
     req.Header.Set("Connection", "keep-alive")
 
     res, err := client.Do(req)
@@ -98,7 +96,7 @@ func SendMessage(number, message string) {
     fmt.Println(string(data))
 }
 
-
+/*
 func main() {
 
     msg := flag.String("msg", "", "A string.")
@@ -109,4 +107,4 @@ func main() {
     }
     SendMessage(phone, *msg)
 }
-
+*/
