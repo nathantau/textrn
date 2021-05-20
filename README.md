@@ -15,7 +15,7 @@ Also remember the username that was registered with TextNow, as that will be the
 ```go
 import "github.com/nathantau/textrn"
 ...
-    client := &{connect_sid, username}
+    client := &textrn.Client{connect_sid, username}
     err := client.SendMessage("<Phone Number>", "<Message Body>")
     if err == "err" {
         // An error occurred
