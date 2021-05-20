@@ -71,8 +71,6 @@ func (c Client) SendMessage(number, message string) string {
     // The Cookie header containing the connect.sid is required for authentication with the service
     req.Header.Set("Cookie", "connect.sid=" + c.ConnectSid)
     req.Header.Set("Content-Type", "application/json")
-    req.Header.Set("Host", "www.textnow.com")
-    req.Header.Set("Connection", "keep-alive")
 
     // Perform HTTP request
     res, err := client.Do(req)
